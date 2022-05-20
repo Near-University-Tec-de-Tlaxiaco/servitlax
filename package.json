@@ -1,0 +1,14 @@
+{
+  "name": "servitlax",
+  "version": "1.0.0",
+  "description": "contrato prueba servitlax",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "servitlax",
+  "license": "MIT",
+  "devDependencies": {
+    "near-sdk-as": "^3.2.3"
+  }
+}
