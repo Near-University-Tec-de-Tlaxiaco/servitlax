@@ -24,7 +24,9 @@ Una vez teniendo instalados los requisitos necesarios ahora si puede proceder a 
 * Dentro del repositorio, instale las dependencias del proyecto ejecutando npm install.
 * Si quiere desplegar el contrato y probar sus funciones, puedes hacerlo con yarn deploy:dev esto le devolverá un conjunto de caracteres que empezarán por "dev-" seguido por numeros generados por la red.
 ---
+   #Ejecucion del Contrato Inteligente
    
+   ---
 
 ## Autores
 
