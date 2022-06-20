@@ -39,6 +39,8 @@ near call (Subcuenta testnet)  getcomentario --accountid=(Cuenta testnet)
 near call (Subcuenta testnet)  get comentario '{"Descripcion":0}'--accountid=(Cuenta testnet)
 * Eliminar comentarios
 near call (subcuenta testnet) deletecomentario '{"comentario":0}'--accountid=(Cuenta testnet)
+
+
   ---
 
 ## Autores
