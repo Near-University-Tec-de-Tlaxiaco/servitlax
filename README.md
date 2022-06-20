@@ -23,11 +23,16 @@ Una vez teniendo instalados los requisitos necesarios ahora si puede proceder a 
 * Inicie sesión en su wallet que creó anteriormente con el código: near login.
 * Dentro del repositorio, instale las dependencias del proyecto ejecutando npm install.
 * Si quiere desplegar el contrato y probar sus funciones, puedes hacerlo con yarn deploy:dev esto le devolverá un conjunto de caracteres que empezarán por "dev-" seguido por numeros generados por la red.
----
+
    ## Ejecucion del Contrato Inteligente 
-* Despues de haber instalado el contrato inteligente y despues de logear tu cuenta con near login, se abrira nuestro navegador para poder
+ ---
+1. Despues de haber instalado el contrato inteligente y despues de logear tu cuenta con near login, se abrira nuestro navegador para poder
 compilar el contrato conyarn asb
-* implementar el contrato connear deploy --accountId (CUENTA TESTNET) --wasmFile build/release/contrato.wasm
+2. implementar el contrato near deploy --accountId (CUENTA TESTNET) --wasmFile build/release/contrato.wasm
+   
+### llamar funciones
+* Ingresar nuevo comentario
+near call (Cuenta testnet) setcomentario '{ "titulo":"buen trabajo","descripcion":"recomendado","calificacion":5}' --accountId=contarto.testnetD
    ---
 
 ## Autores
