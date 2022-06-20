@@ -1,43 +1,41 @@
-import {logging, PersistentUnorderedMap} from "near-sdk-as";
-export const comentarios=new  PersistentUnorderedMap<string,string>("Comentarios");
-export const reseñas=new  PersistentUnorderedMap<string,string>("Reseñas");
-export const comentarios=new  PersistentUnorderedMap<string,string>("Clientes");
+import { PersistentUnorderedMap, logging } from "near-sdk-as";
+import {guardarcomentario, comentario ,guardarusuario, usuario, guardarclientes, clientes, guardarpago, pagos} from "./model"
 
-    //escritura de comentarios
-    export function setComentario (id:string, TituloComentario:string):void{
-        comentarios.set(id, TituloComentario);
-    }
-    //lectura de comentarios
-    export function getComentarios(id:string):string|null{
-        return comentarios.get(id);
-    }
-    export function setReseña(id: string, reseña: string): void {
-        logging.log("Nueva reseña publicada");
-        reseñas.set(id, reseña);
-    }
-    
-    //Método para buscar reseñas
-    export function getReseña(id: string): string | null {
-        logging.log("Se ha encontrado una reseña");
-        return reseñas.get(id);
-    }
-    
-    //Método para borrar reseñas
-    export function deleteReseña(id: string): void{
-        logging.log("Se ha borrado una reseña");
-        reseñas.delete(id);
-    }
-      //Método para buscar clientes
-      export function getClientes(id: string): string | null {
-        logging.log("Se ha encontrado el cliente");
-        return reseñas.get(id);
-    }
-    
-    //Método para borrar clientes
-    export function deleteClientes(id: string): void{
-        logging.log("Se ha borrado un cliente");
-        reseñas.delete(id);
-    }
+export const coment = new PersistentUnorderedMap<string, string>("comentario");
+
+const indcomentario = guardarcomentario.length;
+
+//Método para guardar comentarios
+export function setcomentario(titulo : String, descripcion : String, calificacion: i32): comentario {
+    const newcomen = new comentario(titulo, descripcion, calificacion);
+    guardarcomentario.push(newcomen);
+    logging.log("Nuevo comentario agregado");
+    return newcomen;
+}
 
 
-    
+
+//Método para borrar comentarios
+export function deleteComentario(comentarioIndice : i32): bool{
+    if(guardarcomentario.length < comentarioIndice) {
+        logging.log('El comentario no existe.');
+        return false;
+    }
+    guardarcomentario.swap_remove(comentarioIndice);
+    logging.log('Comentario eliminado.');
+    return true;
+}
+
+
+//Método para buscar comentarios
+export function getcomentario(Buscar: String): comentario {
+    const data = new Array<comentario>(indcomentario);
+    for(let i = 0; i < indcomentario; i++) {
+        data[i] = guardarcomentario[i];
+        if (data[i].titulo==Buscar) {
+            return guardarcomentario[i];
+        }
+    }
+    logging.log("No se encontro el comentario")
+    return guardarcomentario[indcomentario+2];
+}
