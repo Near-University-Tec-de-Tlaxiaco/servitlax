@@ -23,7 +23,7 @@ Una vez teniendo instalados los requisitos necesarios ahora si puede proceder a 
 * Inicie sesión en su wallet que creó anteriormente con el código: near login.
 * Dentro del repositorio, instale las dependencias del proyecto ejecutando npm install.
 * Si quiere desplegar el contrato y probar sus funciones, puedes hacerlo con yarn deploy:dev esto le devolverá un conjunto de caracteres que empezarán por "dev-" seguido por numeros generados por la red.
-* Por último, si desea ejecutar los tests desarrollados puede hacerlo ejecutando yarn test.
+---
    
 
 ## Autores
