@@ -32,11 +32,17 @@ compilar el contrato conyarn asb
    
 ### llamar funciones
 * Ingresar nuevo comentario
-near call (Cuenta testnet) setcomentario '{ "titulo":"buen trabajo","descripcion":"recomendado","calificacion":5}' --accountId=contarto.testnetD
-   ---
+near call (Subcuenta testnet) setcomentario '{ "titulo":"buen trabajo","descripcion":"recomendado","calificacion":5}' --accountId=(Cuenta testnet) 
+* Visualizar los comentarios
+near call (Subcuenta testnet)  getcomentario --accountid=(Cuenta testnet)
+* Mostrar comentario especifico
+near call (Subcuenta testnet)  get comentario '{"Descripcion":0}'--accountid=(Cuenta testnet)
+* Eliminar comentarios
+near call (subcuenta testnet) deletecomentario '{"comentario":0}'--accountid=(Cuenta testnet)
+  ---
 
 ## Autores
 
 - [Rosa Salazar Doroteo](https://github.com/Rosa218)
-- [Irving Salathiel BArrera Valencia](https://github.com/salathiel1999)
+- [Irving Salathiel Barrera Valencia](https://github.com/salathiel1999)
 - [Adolfo German Vasquez Rojas](https://github.com/bg55-a)
